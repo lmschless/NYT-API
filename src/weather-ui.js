@@ -16,7 +16,7 @@ $(document).ready(function() {
 			if (response) {
 				$('.showHumidity').append(
 					`<div><h1>${response.results[0].title}</h1><h4>${response.results[0].byline}<p>${response.results[0]
-						.url}</p> <p><img src="${response.results[0].media[0]}" alt="" srcset=""></p></div>`
+						.url}</p> <p><img src="https://static01.nyt.com/images/2020/03/21/world/It21italy-virus1sub-copy/21italy-virus1sub-thumbStandard-v2.jpg" alt="" srcset=""></p></div>`
 				);
 			} else {
 				$('.showHumidity').text(`There was an error handling your request.`);
