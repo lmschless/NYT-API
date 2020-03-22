@@ -1,24 +1,16 @@
 import { PopularArticles } from './weather-service.js';
+import $ from 'jquery';
 
 $(document).ready(function() {
 	$('#weatherLocation').click(function() {
-		// const city = $('#location').val();
-		// $('#location').val('');
-
 		(async () => {
 			let popularArticles = new PopularArticles();
 			const response = await popularArticles.getArticles();
-			test = response.results;
 			console.log(response.results);
 			displayResults(response);
-
-			// getElements(response);
 		})();
 
-		// <p><img src="${response.results[i].media[0]['media-metadata'][0].url}" alt="" srcset=""></p>
-
 		const displayResults = (response) => {
-			// const image = response.results[0].media[0]['media-metadata'][1].url;
 			for (let i = 0; i < response.results.length; i++) {
 				$('.showHumidity').append(
 					`<div><h1>#${i} ${response.results[i].title}</h1><h4>${response.results[i].byline}<p>${response.results[i]

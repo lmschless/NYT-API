@@ -1,7 +1,6 @@
 import './weather-ui.js';
-// import $ from 'jquery';
-
-// async/await method for api call
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'; // async/await method for api call
 export class PopularArticles {
 	async getArticles() {
 		try {
