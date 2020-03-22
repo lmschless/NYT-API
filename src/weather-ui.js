@@ -12,18 +12,35 @@ $(document).ready(function() {
 
 		const displayResults = (response) => {
 			for (let i = 0; i < response.results.length; i++) {
-				$('.showHumidity').append(
-					`<div class="media"><h5 class="mt-0">#${i} ${response.results[i]
-						.title}</h5><div class="media-body"><h6>${response.results[i].byline}</h6>${response.results[i].url}`
-				);
+				$('.showHumidity').append(`<div class="media">`);
+
 				if (response.results[i].media.length != 0) {
 					$('.showHumidity').append(
-						`<img src="${response.results[i].media[0]['media-metadata'][1]
-							.url}" class="mr-3" alt="" srcset=""></div></div>`
+						`<img src="${response.results[i].media[0]['media-metadata'][2].url}" class="mr-3"
+						 alt="" srcset=""><div class="media-body">
+						 <h5 class="mt-0">#${i} ${response.results[i].title}</h5>
+						 ${response.results[i].byline}
+					 </div>
+				 </div>`
 					);
 				} else {
-					continue;
+					$('.showHumidity').append(
+						`<br><div class="media-body">
+							<h5 class="mt-0">#${i} ${response.results[i].title}</h5>
+							${response.results[i].byline}
+						</div>
+					</div>`
+					);
 				}
+
+				// if (response.results[i].media.length != 0) {
+				// 	$('.showHumidity').append(
+				// 		`<img src="${response.results[i].media[0]['media-metadata'][1]
+				// 			.url}" class="mr-0" alt="" srcset=""></div></div>`
+				// 	);
+				// } else {
+				// 	continue;
+				// }
 			}
 			console.log(response);
 		};
