@@ -16,17 +16,17 @@ $(document).ready(function() {
 
 				if (response.results[i].media.length != 0) {
 					$('.showHumidity').append(
-						`<img src="${response.results[i].media[0]['media-metadata'][2].url}" class="mr-3"
-						 alt="" srcset=""><div class="media-body">
-						 <h5 class="mt-0">#${i} ${response.results[i].title}</h5>
-						 ${response.results[i].byline}
+						`<div class="media-body">
+						<h5 class="mt-0">#${i} ${response.results[i].title}</h5>
+						${response.results[i].byline}<br><img src="${response.results[i].media[0]['media-metadata'][2].url}" class="mr-3"
+						 alt="" srcset="">
 					 </div>
 				 </div>`
 					);
 				} else {
 					$('.showHumidity').append(
 						`<br><div class="media-body">
-							<h5 class="mt-0">#${i} ${response.results[i].title}</h5>
+							<h5 class="mt-0">#${i} ${response.results[i].title}</h5><br>
 							${response.results[i].byline}
 						</div>
 					</div>`
