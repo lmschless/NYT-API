@@ -13,12 +13,13 @@ $(document).ready(function() {
 		const displayResults = (response) => {
 			for (let i = 0; i < response.results.length; i++) {
 				$('.showHumidity').append(
-					`<div><h1>#${i} ${response.results[i].title}</h1><h4>${response.results[i].byline}<p>${response.results[i]
-						.url}</p></div>`
+					`<div class="media"><h5 class="mt-0">#${i} ${response.results[i]
+						.title}</h5><div class="media-body"><h6>${response.results[i].byline}</h6>${response.results[i].url}`
 				);
 				if (response.results[i].media.length != 0) {
 					$('.showHumidity').append(
-						`<p><img src="${response.results[i].media[0]['media-metadata'][2].url}" alt="" srcset=""></p>`
+						`<img src="${response.results[i].media[0]['media-metadata'][1]
+							.url}" class="mr-3" alt="" srcset=""></div></div>`
 					);
 				} else {
 					continue;
@@ -26,5 +27,22 @@ $(document).ready(function() {
 			}
 			console.log(response);
 		};
+
+		// const displayResults = (response) => {
+		// 	for (let i = 0; i < response.results.length; i++) {
+		// 		$('.showHumidity').append(
+		// 			`<div><h1>#${i} ${response.results[i].title}</h1><h4>${response.results[i].byline}<p>${response.results[i]
+		// 				.url}</p></div>`
+		// 		);
+		// 		if (response.results[i].media.length != 0) {
+		// 			$('.showHumidity').append(
+		// 				`<p><img src="${response.results[i].media[0]['media-metadata'][2].url}" alt="" srcset=""></p>`
+		// 			);
+		// 		} else {
+		// 			continue;
+		// 		}
+		// 	}
+		// 	console.log(response);
+		// };
 	});
 });
