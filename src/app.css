@@ -1,0 +1,14 @@
+.media {
+	border: solid;
+}
+
+#weatherLocation {
+	border: 0em;
+	border-radius: 5em;
+	margin-top: 5rem;
+}
+
+.container {
+	text-align: center;
+	align-items: center;
+}
