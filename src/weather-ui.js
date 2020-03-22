@@ -1,7 +1,6 @@
 import { PopularArticles } from './weather-service.js';
 
 $(document).ready(function() {
-	let test;
 	$('#weatherLocation').click(function() {
 		// const city = $('#location').val();
 		// $('#location').val('');
