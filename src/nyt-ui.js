@@ -54,6 +54,7 @@ $(document).ready(function() {
 			let searchArticles = new SearchArticles();
 			const response = await searchArticles.findArticles(searchTerm);
 			displayResults(response);
+			console.log(searchTerm);
 		})();
 	});
 });
