@@ -38,18 +38,19 @@ $(document).ready(function() {
 			console.log(response);
 		} else {
 			for (let i = 0; i < 10; i++) {
-				$('.display-articles').append(`${response.response.docs.headline}`);
+				$('.display-articles').append(`${response.response.docs[i].headline.main}<br>`);
 			}
 			console.log(response);
+			console.log(response.response.docs[0].snippet);
 			console.log('using search, not popular articles!');
 		}
 	};
 
 	$('#search-articles').click(function() {
+		const searchTerm = $('#search-box').val();
 		(async () => {
 			let searchArticles = new SearchArticles();
-			const response = await searchArticles.findArticles('virus');
-			console.log(response);
+			const response = await searchArticles.findArticles(searchTerm);
 			displayResults(response);
 		})();
 	});
