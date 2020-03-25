@@ -20,8 +20,10 @@ $(document).ready(function() {
 					$('.display-articles').append(
 						`<div class="media-body">
 					<h5 class="mt-0">#${i} ${response.results[i].title}</h5>
-					${response.results[i].byline}<br><img src="${response.results[i].media[0]['media-metadata'][2].url}" class="mr-3"
-					 alt="" srcset="">
+					${response.results[i].byline}<br><a href="${response.results[i].url}"><img src="${response.results[i].media[0][
+							'media-metadata'
+						][2].url}" class="mr-3"
+					 alt="" srcset=""></a>
 				 </div>
 			 </div>`
 					);
