@@ -39,8 +39,16 @@ $(document).ready(function() {
 			}
 			console.log(response);
 		} else {
+			$('.display-articles').append(
+				`<h4>${response.response.meta.hits} articles returned in ${response.response.meta
+					.time}ms (displaying the top 10 results)</h4><br>`
+			);
 			for (let i = 0; i < 10; i++) {
-				$('.display-articles').append(`${response.response.docs[i].headline.main}<br>`);
+				$('.display-articles').append(`<div class="media">`);
+				$('.display-articles').append(
+					`<div class="media-body"><h5 class="mt-0">#${i} ${response.response.docs[i].headline.main}<p>${response
+						.response.docs[i].abstract}</p><br>`
+				);
 			}
 			console.log(response);
 			console.log(response.response.docs[0].snippet);
@@ -49,6 +57,7 @@ $(document).ready(function() {
 	};
 
 	$('#search-articles').click(function() {
+		$('.display-articles').empty();
 		const searchTerm = $('#search-box').val();
 		(async () => {
 			let searchArticles = new SearchArticles();
