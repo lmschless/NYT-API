@@ -55,10 +55,13 @@ $(document).ready(function() {
 					.time}ms (displaying the top 10 results)</h4><br>`
 			);
 			for (let i = 0; i < 10; i++) {
+				// let date = response.response.docs[i].pub_date;
+				// let updatedDate = moment.format(date);
+				// console.log(updatedDate);
 				$('.display-articles').append(`<div class="media">`);
 				$('.display-articles').append(
-					`<div class="media-body"><h5 class="mt-0">#${i} ${response.response.docs[i].headline.main}<p>${response
-						.response.docs[i].abstract}</p><br>`
+					`<div class="media-body"><h5 class="mt-0">#${i} ${response.response.docs[i].headline.main}</h5><p>${response
+						.response.docs[i].pub_date}</p><p>${response.response.docs[i].abstract}</p><br>`
 				);
 			}
 			console.log(response);
