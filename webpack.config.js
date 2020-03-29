@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
+const format = require('date-format');
 
 module.exports = {
 	entry: './src/nyt-apis.js', // './src/index': './src/main.js'
