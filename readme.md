@@ -1,6 +1,8 @@
+# New York Times Article API - Independent Project for Epicodus. 
+
+
 ![Image description](/nyt-api.png)
 
-# New York Times Article API - Independent Project for Epicodus. 
 
 #### _Returns popular articles using the NYT API. Also has functionality to display search results of a given query._
 
