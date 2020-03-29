@@ -13,6 +13,15 @@ $(document).ready(function() {
 		})();
 	});
 	$('#search-articles').click(function() {
+		searchResults();
+	});
+	// handle enter code in search box
+	$('#search-box').keypress(function(event) {
+		if (event.keyCode === 13) {
+			searchResults();
+		}
+	});
+	const searchResults = () => {
 		$('.display-articles').empty();
 		const searchTerm = $('#search-box').val();
 		(async () => {
@@ -20,7 +29,8 @@ $(document).ready(function() {
 			const response = await searchArticles.findArticles(searchTerm);
 			displayResults(response);
 		})();
-	});
+		$('#search-box').val('');
+	};
 
 	const displayResults = (response) => {
 		if (response.results) {
@@ -30,7 +40,7 @@ $(document).ready(function() {
 				if (response.results[i].media.length != 0) {
 					$('.display-articles').append(
 						`<div class="media-body">
-				<h5 class="mt-0">#${i} ${response.results[i].title}</h5>
+				<h5 class="mt-0">${i + 1} - ${response.results[i].title}</h5>
 				${response.results[i].byline}<br><a href="${response.results[i].url}"><img src="${response.results[i].media[0][
 							'media-metadata'
 						][2].url}" class="mr-3"
@@ -41,7 +51,7 @@ $(document).ready(function() {
 				} else {
 					$('.display-articles').append(
 						`<br><div class="media-body">
-					<h3 class="mt-0">#${i} ${response.results[i].title}</h3><br>
+					<h3 class="mt-0">${i + 1} - ${response.results[i].title}</h3><br>
 					${response.results[i].byline}
 				</div>
 			</div>`
@@ -63,7 +73,7 @@ $(document).ready(function() {
 				console.log(updatedDate);
 				$('.display-articles').append(`<div class="media">`);
 				$('.display-articles').append(
-					`<div class="media-body"><h1 class="mt-0">#${i} ${response.response.docs[i].headline
+					`<div class="media-body"><h1 class="mt-0">${i + 1} - ${response.response.docs[i].headline
 						.main}</h1><p>Published: ${updatedDate}</p><p><q>${response.response.docs[i]
 						.lead_paragraph}</q></p><p><a href="${response.response.docs[i]
 						.web_url}">Click here to read the full article!</a></p><br>`
