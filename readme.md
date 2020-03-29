@@ -10,6 +10,8 @@
 
 #### _The app uses date-format package to format the response published date from NYT API._
 
+#### _Uses complicated api response navigation such as "${response.results[i].media[0]['media-metadata'][2].url}" To display the article thumbnail image._
+
 
 #### _3/28/20_
 
