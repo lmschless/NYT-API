@@ -63,12 +63,13 @@ $(document).ready(function() {
 				console.log(updatedDate);
 				$('.display-articles').append(`<div class="media">`);
 				$('.display-articles').append(
-					`<div class="media-body"><h3 class="mt-0">#${i} ${response.response.docs[i].headline
-						.main}</h3><p>${updatedDate}</p><p>${response.response.docs[i].abstract}</p><br>`
+					`<div class="media-body"><h1 class="mt-0">#${i} ${response.response.docs[i].headline
+						.main}</h1><p>${updatedDate}</p><p><q>${response.response.docs[i].abstract}</q></p><p><a href="${response
+						.response.docs[i].web_url}">Click here to read the full article!</a></p><br>`
 				);
 			}
 			console.log(response);
-			console.log(response.response.docs[0].snippet);
+			console.log(response.response.docs[0].web_url);
 			console.log('using search, not popular articles!');
 		}
 	};
