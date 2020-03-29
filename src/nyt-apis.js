@@ -8,7 +8,7 @@ export class PopularArticles {
 	async getArticles() {
 		try {
 			let response = await fetch(
-				`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=3KfCi2cnPyWhA5FCqS3qlqUKULBAPRGk`
+				`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${process.env.API_KEY}`
 			);
 			let jsonifiedResponse;
 			if (response.ok && response.status == 200) {
@@ -27,7 +27,7 @@ export class SearchArticles {
 	async findArticles(searchTerm) {
 		try {
 			let response = await fetch(
-				`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=3KfCi2cnPyWhA5FCqS3qlqUKULBAPRGk`
+				`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${process.env.API_KEY}`
 			);
 			let jsonifiedResponse;
 			if (response.ok && response.status == 200) {
