@@ -23,8 +23,13 @@ html body {
 	align-items: center;
 	text-align: center;
 	border: none;
+	border-radius: 10em;
 }
 
+footer {
+	text-align: center;
+	align-items: center;
+}
 /* #test {
 	float: left;
 } */
