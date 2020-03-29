@@ -4,13 +4,13 @@
 ![Image description](/nyt-api.png)
 
 
-#### _Returns popular articles using the NYT API. Also has functionality to display search results of a given query._
+* #### _Returns popular articles using the NYT API. Also has functionality to display search results of a given query._
 
-#### _The app utlizes loops to display API responses all at once._
+* #### _The app utlizes loops to display API responses all at once._
 
-#### _The app uses date-format package to format the response published date from NYT API._
+* #### _The app uses date-format package to format the response published date from NYT API._
 
-#### _Uses complicated api response navigation such as "${response.results[i].media[0]['media-metadata'][2].url}" To display the article thumbnail image._
+* #### _Uses complicated api response navigation such as `${response.results[i].media[0]['media-metadata'][2].url}` To display the article thumbnail image._
 
 
 #### _3/28/20_
