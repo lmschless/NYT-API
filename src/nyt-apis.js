@@ -2,7 +2,6 @@ import './nyt-ui.js';
 import 'bootstrap';
 import './app.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; // async/await method for api call
-import 'moment';
 
 export class PopularArticles {
 	async getArticles() {
