@@ -42,7 +42,7 @@ $(document).ready(function() {
 				} else {
 					$('.display-articles').append(
 						`<br><div class="media-body">
-					<h5 class="mt-0">#${i} ${response.results[i].title}</h5><br>
+					<h3 class="mt-0">#${i} ${response.results[i].title}</h3><br>
 					${response.results[i].byline}
 				</div>
 			</div>`
@@ -52,17 +52,19 @@ $(document).ready(function() {
 			console.log(response);
 		} else {
 			$('.display-articles').append(
-				`<h4>${response.response.meta.hits} articles returned in ${response.response.meta
-					.time}ms (displaying the top 10 results)</h4><br>`
+				`<h5>${response.response.meta.hits} articles returned in ${response.response.meta
+					.time}ms (displaying the top 10 results)</h5><br>`
 			);
 			for (let i = 0; i < 10; i++) {
+				// Uses date-format package to beautify pubDates from the response.
 				let date = response.response.docs[i].pub_date;
 				let updatedDate = format.parse(format.ISO8601_FORMAT, date);
+
 				console.log(updatedDate);
 				$('.display-articles').append(`<div class="media">`);
 				$('.display-articles').append(
-					`<div class="media-body"><h5 class="mt-0">#${i} ${response.response.docs[i].headline
-						.main}</h5><p>${updatedDate}</p><p>${response.response.docs[i].abstract}</p><br>`
+					`<div class="media-body"><h3 class="mt-0">#${i} ${response.response.docs[i].headline
+						.main}</h3><p>${updatedDate}</p><p>${response.response.docs[i].abstract}</p><br>`
 				);
 			}
 			console.log(response);
