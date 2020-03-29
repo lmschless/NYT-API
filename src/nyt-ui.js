@@ -9,7 +9,6 @@ $(document).ready(function() {
 		(async () => {
 			let popularArticles = new PopularArticles();
 			const response = await popularArticles.getArticles();
-			console.log(response.results);
 			displayResults(response);
 		})();
 	});
@@ -20,12 +19,12 @@ $(document).ready(function() {
 			let searchArticles = new SearchArticles();
 			const response = await searchArticles.findArticles(searchTerm);
 			displayResults(response);
-			console.log(searchTerm);
 		})();
 	});
 
 	const displayResults = (response) => {
 		if (response.results) {
+			// run the popular articles api
 			for (let i = 0; i < response.results.length; i++) {
 				$('.display-articles').append(`<div class="media">`);
 				if (response.results[i].media.length != 0) {
@@ -51,6 +50,7 @@ $(document).ready(function() {
 			}
 			console.log(response);
 		} else {
+			// run the search api
 			$('.display-articles').append(
 				`<h5>${response.response.meta.hits} articles returned in ${response.response.meta
 					.time}ms (displaying the top 10 results)</h5><br>`
@@ -64,8 +64,9 @@ $(document).ready(function() {
 				$('.display-articles').append(`<div class="media">`);
 				$('.display-articles').append(
 					`<div class="media-body"><h1 class="mt-0">#${i} ${response.response.docs[i].headline
-						.main}</h1><p>${updatedDate}</p><p><q>${response.response.docs[i].abstract}</q></p><p><a href="${response
-						.response.docs[i].web_url}">Click here to read the full article!</a></p><br>`
+						.main}</h1><p>Published: ${updatedDate}</p><p><q>${response.response.docs[i]
+						.lead_paragraph}</q></p><p><a href="${response.response.docs[i]
+						.web_url}">Click here to read the full article!</a></p><br>`
 				);
 			}
 			console.log(response);
