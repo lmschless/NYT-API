@@ -1,4 +1,4 @@
-![Image description](src/nyt-api.png)
+![Image description](/nyt-api.png)
 
 # New York Times Article API - Independent Project for Epicodus. 
 
