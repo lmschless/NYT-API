@@ -14,7 +14,7 @@
 #### By _**Luke Schlessinger**_
 
 ## Setup/Installation Requirements
-API key for grading purposes (I have it hidden in a .env file.) API_KEY = 3KfCi2cnPyWhA5FCqS3qlqUKULBAPRGk
+API key for grading purposes (I have it hidden in a .env file.) **API_KEY = 3KfCi2cnPyWhA5FCqS3qlqUKULBAPRGk**
 * _Clone repo, run npm install, create a .env file in your project directory with the above API key line, type "npm run start" (you may have to refresh the page once for it to load). Try out both Buttons to see total functionality!_
 
 ## Specifications:

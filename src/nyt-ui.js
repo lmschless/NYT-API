@@ -58,7 +58,6 @@ $(document).ready(function() {
 					);
 				}
 			}
-			console.log(response);
 		} else {
 			// run the search api
 			$('.display-articles').append(
@@ -70,7 +69,6 @@ $(document).ready(function() {
 				let date = response.response.docs[i].pub_date;
 				let updatedDate = format.parse(format.ISO8601_FORMAT, date);
 
-				console.log(updatedDate);
 				$('.display-articles').append(`<div class="media">`);
 				$('.display-articles').append(
 					`<div class="media-body"><h1 class="mt-0">${i + 1} - ${response.response.docs[i].headline
@@ -79,9 +77,6 @@ $(document).ready(function() {
 						.web_url}">Click here to read the full article!</a></p><br>`
 				);
 			}
-			console.log(response);
-			console.log(response.response.docs[0].web_url);
-			console.log('using search, not popular articles!');
 		}
 	};
 });
